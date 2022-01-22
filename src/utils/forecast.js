@@ -16,7 +16,12 @@ const forecast=(latitude,longitude,callback)=>
         }
         else
         {
-            callback(undefined,body.current.weather_descriptions[0]+". It is currently "+ body.current.temperature +" degrees out. But it feels like "+body.current.feelslike+" degrees.")
+            const data={
+                weather_description: body.current.weather_descriptions[0],
+                Temperature: body.current.temperature +" degrees",
+                Humidity: body.current.humidity
+            }
+            callback(undefined,data)
         }
     })
 }

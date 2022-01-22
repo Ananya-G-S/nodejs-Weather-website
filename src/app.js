@@ -52,13 +52,15 @@ app.get('/weather',(req,res)=>{
             return res.send({error})
          }
               
-         forecast(latitude,longitude, (error, forecastdata)=>{
+         forecast(latitude,longitude, (error, {weather_description,Temperature,Humidity}={})=>{
              if(error){
                  return res.send({error})
              }
 
              res.send({
-                 forecast:forecastdata,
+                 weather_description,
+                 Temperature,
+                 Humidity,
                  location:location,
                 address:req.query.address})
 
@@ -66,15 +68,6 @@ app.get('/weather',(req,res)=>{
          })
     })
     
-})
-
-app.get('/products',(req,res)=>{
-    if(!req.query.search){
-       return res.send({
-            error:'you must provide a search term'
-        })
-    }
-  
 })
 
 app.get('/help/*',(req,res)=>{
