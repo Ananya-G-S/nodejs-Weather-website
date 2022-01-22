@@ -7,6 +7,7 @@ body{
     display:flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #eeeeee;
 
 }
 .main-content{
@@ -31,11 +32,12 @@ h1{
 
 }
 header a {
-    color:#888888;
+    color:#4e96f3;
     margin-right: 16px;
     text-decoration: none;
 }
 .portrait{
+    height:450px;
     width: 250px;
 
 }
