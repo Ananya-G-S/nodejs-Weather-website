@@ -34,7 +34,7 @@ app.get('/about',(req,res)=>{
 })
 app.get('/help',(req,res)=>{
     res.render('help',{
-        helptext:'This is to your help',
+        helptext:'If you cannot find your location, try searching by your pincode',
         title:'Help',
         name:'Ananya'
     })
